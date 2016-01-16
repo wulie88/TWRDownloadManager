@@ -100,7 +100,13 @@
              remainingTime:(void(^)(NSUInteger seconds))remainingTimeBlock
            completionBlock:(void(^)(BOOL completed))completionBlock
       enableBackgroundMode:(BOOL)backgroundMode {
-
+    [self downloadFileForURL:url
+                    withName:fileName
+            inDirectoryNamed:directory
+               progressBlock:progressBlock
+               remainingTime:remainingTimeBlock
+             completionBlock:completionBlock
+        enableBackgroundMode:backgroundMode];
 }
 
 - (void)downloadFileForURL:(NSString *)url
@@ -110,8 +116,9 @@
            completionBlock:(void(^)(BOOL completed))completionBlock
       enableBackgroundMode:(BOOL)backgroundMode {
     [self downloadFileForURL:url
-                    withName:[url lastPathComponent]
+                    withName:fileName
             inDirectoryNamed:directory
+                friendlyName:nil
                progressBlock:progressBlock
                remainingTime:remainingTimeBlock
              completionBlock:completionBlock
