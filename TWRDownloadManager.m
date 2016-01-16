@@ -93,7 +93,7 @@
     }
 }
 
-- (void)downloadFileForURL:(NSString *)urlString
+- (void)downloadFileForURL:(NSString *)url
                   withName:(NSString *)fileName
           inDirectoryNamed:(NSString *)directory
              progressBlock:(void(^)(CGFloat progress))progressBlock
